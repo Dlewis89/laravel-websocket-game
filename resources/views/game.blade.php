@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>multi-player websocket game</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <canvas id="game-canvas" width="1280" height="720"></canvas>
+        <canvas id="game-canvas" width="480" height="320"></canvas>
         <script src="{{ asset('js/game.js') }}"></script>
     </body>
 </html>
