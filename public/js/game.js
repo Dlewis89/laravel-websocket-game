@@ -15,22 +15,37 @@ let playerY = 100;
 const playerSize = 16;
 const playerColor = 'white'
 
-function move_player() {
+document.addEventListener('keydown', function(e) {
+    // console.log(e.key);
 
-}
+    if (playerX > 0 && playerX + playerSize < gameWidth && playerY > 0 && playerY + playerSize < gameHeight) {
+        switch(e.key) {
+            case 'w':
+                playerY -= 5;
+                break;
+            case 'a':
+                playerX -= 5;
+                break;
+            case 's':
+                playerY += 5;
+                break;
+            case 'd':
+                playerX += 5;
+                break;
+            default:
+                break;
+        }
+    }  
+});
 
 function update() {
     frame++;
-
-    if (playerX > 0 && playerX + playerSize < gameWidth && playerY > 0 && playerY + playerSize < gameHeight) {
-        playerX++;
-    }
 
     ctx.clearRect(0, 0, gameWidth, gameHeight);
     ctx.fillRect(playerX, playerY, playerSize - 1, playerSize - 1);
     ctx.strokeStyle = playerColor;
     ctx.strokeRect(playerX, playerY, playerSize, playerSize);
-    console.log(frame);
+    // console.log(frame);
 }
 
 function animate() {
